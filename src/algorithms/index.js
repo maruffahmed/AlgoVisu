@@ -1,3 +1,3 @@
-import BubbleSort, { BubbleSortSteps } from './BubbleSort';
+import { BubbleSortSteps, useBubbleSort } from './BubbleSort';
 
-export { BubbleSort, BubbleSortSteps };
+export { BubbleSortSteps, useBubbleSort };

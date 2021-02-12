@@ -1,26 +1,35 @@
-function BubbleSort(arr = []) {
+function swapWithDispatch(arr, index1, index2, count, dispatch) {
+  let temp = arr[index1];
+  setTimeout(function () {
+    arr[index1] = arr[index2];
+    arr[index2] = temp;
+    dispatch({ type: 'SETNEW', payload: arr });
+  }, count * 1);
+}
+
+function useBubbleSort(arr = [], dispatch) {
   let sortedArr = [...arr];
-  for (let i = sortedArr.length - 1; i >= 0; i--) {
-    for (let j = 0; j < i; j++) {
-      if (sortedArr[j] > sortedArr[j + 1]) {
-        [sortedArr[j], sortedArr[j + 1]] = [sortedArr[j + 1], sortedArr[j]];
+  let count = 0;
+  return function BubbleSort() {
+    for (let i = sortedArr.length - 1; i >= 0; i--) {
+      for (let j = 0; j < i; j++) {
+        swapWithDispatch(sortedArr, j, j + 1, count, dispatch);
+        count++;
       }
     }
-  }
-  return sortedArr;
+    return sortedArr;
+  };
 }
 
 function* BubbleSortSteps(arr = []) {
-  for (let i = arr.length - 1; i >= 0; i--) {
+  const newArr = [...arr];
+  for (let i = newArr.length - 1; i >= 0; i--) {
     for (let j = 0; j < i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      if (newArr[j] > newArr[j + 1]) {
+        [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]];
       }
-
-      yield arr;
+      yield newArr;
     }
   }
 }
-
-export default BubbleSort;
-export { BubbleSortSteps };
+export { BubbleSortSteps, useBubbleSort };
