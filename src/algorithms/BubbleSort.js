@@ -1,22 +1,32 @@
 function swapWithDispatch(arr, index1, index2, count, dispatch) {
-  let temp = arr[index1];
   setTimeout(function () {
-    arr[index1] = arr[index2];
-    arr[index2] = temp;
+    swap(arr, index1, index2);
     dispatch({ type: 'SETNEW', payload: arr });
+    console.log('Doing');
+  }, count * 1000);
+}
+function swap(arr, index1, index2, count) {
+  return new Promise((resolve) => setTimeout(() => resolve(), 1000));
+  setTimeout(function () {
+    [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
   }, count * 1);
 }
 
 function useBubbleSort(arr = [], dispatch) {
   let sortedArr = [...arr];
   let count = 0;
-  return function BubbleSort() {
+  return async function BubbleSort() {
     for (let i = sortedArr.length - 1; i >= 0; i--) {
       for (let j = 0; j < i; j++) {
-        swapWithDispatch(sortedArr, j, j + 1, count, dispatch);
+        if (sortedArr[j] > sortedArr[j + 1]) {
+          // swapWithDispatch(sortedArr, j, j + 1, count, dispatch);
+          await swap(sortedArr, j, j + 1, count);
+        }
+        dispatch({ type: 'SETNEW', payload: sortedArr });
         count++;
       }
     }
+
     return sortedArr;
   };
 }
