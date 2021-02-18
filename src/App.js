@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { BubbleSortSteps, useBubbleSort } from 'algorithms';
-import Bar from 'components/Bar';
+import ItemBars from 'components/ItemBars';
 import { initialState } from 'algorithms/lib';
 
+// Reducer function for state change action
 function reducer(state, action) {
   switch (action.type) {
     case 'SETNEW':
@@ -13,95 +14,61 @@ function reducer(state, action) {
   }
 }
 
-let currentPos = 0;
-let timer;
-let swapped = [];
-
 function App() {
-  const [arr, setArr] = React.useState(initialState);
-  const [start, setStart] = React.useState(false);
+  const [{ arr: initialArray }, dispatch] = React.useReducer(reducer, initialState); // Unsorted initial array
+  // const BubbleSort = useBubbleSort(initialArray, dispatch);
+  // Make a random array
   const randomArr = () => {
     let newArr = [];
-    for (let i = 0; i < 50; i++) {
-      newArr.push(randomNum(1, 100));
+    for (let i = 0; i < 100; i++) {
+      newArr.push(randomNum(500, 10000));
     }
-    setArr(newArr);
+    dispatch({ type: 'SETNEW', payload: newArr });
+  };
+  // Buttble sort action
+  const doBubbleSort = () => {
+    // BubbleSort();
+    let bubbleSortSteps = [];
+    for (let step of BubbleSortSteps(initialArray)) {
+      bubbleSortSteps.push(step);
+    }
+    console.log(bubbleSortSteps);
+    doAnimation(bubbleSortSteps);
   };
 
-  const swap = (left, right) => {
-    let newArray = [...arr];
-    if (arr[left] > arr[left + 1]) {
-      let leftItem = arr[left];
-      let rightItem = arr[left + 1];
-      arr[left] = rightItem;
-      arr[right] = leftItem;
-      newArray = [...arr];
-    }
-    if (currentPos >= arr.length - swapped.length) {
-      currentPos = 0;
-      swapped.push(right);
-      console.log('added to swapped', right);
-    } else {
-      currentPos++;
-    }
-    setArr(newArray);
-    if (swapped.length === arr.length - 1) {
-      currentPos = -2;
-      setStart(false);
-      stop();
+  const doAnimation = (sortedArr) => {
+    for (let i = 0; i < sortedArr.length; i++) {
+      const domBar = document.getElementsByClassName('item-bar');
+      const isColor = i % 3 !== 2;
+      if (isColor) {
+        const [firstBar, secondBar] = sortedArr[i];
+        const firstBarStyle = domBar[firstBar].style;
+        const secondBarStyle = domBar[secondBar].style;
+        const color = i % 3 === 0 ? 'red' : 'rgba(16, 185, 129, var(--tw-bg-opacity))';
+        setTimeout(() => {
+          firstBarStyle.backgroundColor = color;
+          secondBarStyle.backgroundColor = color;
+        }, i * 5);
+      } else {
+        setTimeout(() => {
+          const [selectedBar, selectedBarHeight] = sortedArr[i];
+          const selectedBarStyle = domBar[selectedBar].style;
+          selectedBarStyle.height = `${selectedBarHeight}%`;
+        }, i * 5);
+      }
     }
   };
 
-  const bubbleSort = () => {
-    swap(currentPos, currentPos + 1);
-  };
-
-  function startSort() {
-    if (start) {
-      timer = setTimeout(bubbleSort, 500);
-    }
-  }
-
-  function stop() {
-    setStart(false);
-    clearTimeout(timer);
-  }
-  startSort();
-
+  // Js buildin sort()
   const doSort = () => {
-    const newArr = [...arr];
+    const newArr = [...initialArray];
     newArr.sort((a, b) => a - b);
-    setArr(newArr);
+    dispatch({ type: 'SETNEW', payload: newArr });
   };
-
-  const renderCol = () => {
-    return (
-      <div className="bars h-4/5 px-8 py-4">
-        <ul className="h-full flex items-end gap-1">
-          {arr.map((item, index) => {
-            let current = index === currentPos || index === currentPos + 1 ? true : false;
-            return <Bar height={item} key={index} />;
-          })}
-        </ul>
-      </div>
-    );
-  };
-
   return (
     <div className="h-screen w-screen px-4">
-      {renderCol()}
-      <div className="flex items-end gap-1 w-full px-8">
-        {arr?.length
-          ? arr.map((item, index) => {
-              return (
-                <p className="w-full text-center text-xs" key={index}>
-                  {item}
-                </p>
-              );
-            })
-          : null}
-      </div>
-      <button className="btn" type="button" onClick={() => setStart(true)}>
+      <ItemBars arr={initialArray} />
+      <button className="btn" type="button" onClick={doBubbleSort}>
         BubbleSort
       </button>
       <button className="btn" onClick={doSort}>
@@ -113,7 +80,7 @@ function App() {
     </div>
   );
 }
-
+// Get a random number between minimum and maximum number
 function randomNum(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }

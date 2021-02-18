@@ -7,7 +7,7 @@ function ItemBars({ arr }) {
         {/* {arr?.length && arr.map((item, index) => <Bar height={item} key={index} />)} */}
         {arr?.length &&
           arr.map((item, index) => (
-            <li key={index} className="bg-green-500 flex-grow" style={{ height: `${item}%` }}></li>
+            <li key={index} className="item-bar bg-green-500 flex-grow" style={{ height: `${item}%` }}></li>
           ))}
       </ul>
     </div>
