@@ -6,4 +6,7 @@
   .btn {
     @apply py-4 px-4 bg-gray-200 rounded text-gray-900 text-center;
   }
+  .item-bar {
+    @apply transition duration-100 ease-in;
+  }
 }
