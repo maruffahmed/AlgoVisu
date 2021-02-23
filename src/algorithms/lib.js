@@ -1,4 +1,4 @@
-export const initialState = [
+export const initialValue = [
   6609,
   527,
   6728,

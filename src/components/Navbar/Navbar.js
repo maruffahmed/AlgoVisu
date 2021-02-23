@@ -23,6 +23,16 @@ function Navbar(props) {
                 Insertion
               </a>
             </li>
+            <li>
+              <a href="/" className="text-gray-700 hover:text-gray-500">
+                Quick
+              </a>
+            </li>
+            <li>
+              <a href="/" className="text-gray-700 hover:text-gray-500">
+                Merge
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,50 +1,18 @@
 import React from 'react';
-import { BubbleSortSteps } from 'algorithms';
-import ItemBars from 'components/Bars/ItemBars';
-import { initialState, randomNum } from 'algorithms/lib';
-import { BubbleSortAnimation } from 'algorithmAnimation';
 import Navbar from 'components/Navbar/Navbar';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import BubbleSort from 'components/Bubble/BubbleSort';
 
 function App() {
-  const [initialArray, setInitialArray] = React.useState(initialState); // Unsorted initial array
-  // Make a random array
-  const randomArr = () => {
-    let newArr = [];
-    for (let i = 0; i < 100; i++) {
-      newArr.push(randomNum(500, 10000));
-    }
-    setInitialArray(newArr);
-  };
-  // Buttble sort action
-  const doBubbleSort = () => {
-    // BubbleSort();
-    let bubbleSortSteps = []; // Bubble sort steps array
-    for (let step of BubbleSortSteps(initialArray)) {
-      bubbleSortSteps.push(step);
-    }
-    // console.log(bubbleSortSteps);
-    BubbleSortAnimation(bubbleSortSteps);
-  };
-
-  // Js buildin sort()
-  const doSort = () => {
-    const newArr = [...initialArray];
-    newArr.sort((a, b) => a - b);
-    setInitialArray(newArr);
-  };
   return (
     <div className="h-screen w-screen">
       <Navbar />
-      <ItemBars arr={initialArray} />
-      <button className="btn" type="button" onClick={doBubbleSort}>
-        BubbleSort
-      </button>
-      <button className="btn" onClick={doSort}>
-        Sort()
-      </button>
-      <button className="btn" onClick={randomArr}>
-        Random array
-      </button>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/bubble" />
+        </Route>
+        <Route path="/bubble" component={BubbleSort} />
+      </Switch>
     </div>
   );
 }
