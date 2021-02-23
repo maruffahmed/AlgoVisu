@@ -8,7 +8,7 @@ This project is create by using `create-react-app`
 Follow this to run this project on your local environment:
 
 - Clone this repo
-- `yarn` or `npm install`
+- Run `yarn` or `npm install`
 - Make sure you have install `Eslint` and `Prettier` VSCODE extension for better code format
 - Run `yarn start` or `npm start`
 
