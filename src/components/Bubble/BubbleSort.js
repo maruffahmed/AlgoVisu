@@ -6,7 +6,7 @@ function BubbleSort(props) {
   const { initialArray, doBubbleSort, doSort, randomArr } = useSortingContext();
   console.log(initialArray);
   return (
-    <>
+    <div className="h-screen px-4">
       <ItemBars arr={initialArray} />
       <button className="btn" type="button" onClick={doBubbleSort}>
         BubbleSort
@@ -17,7 +17,7 @@ function BubbleSort(props) {
       <button className="btn" onClick={randomArr}>
         Random array
       </button>
-    </>
+    </div>
   );
 }
 
