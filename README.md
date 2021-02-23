@@ -12,7 +12,7 @@ Follow this to run this project on your local environment:
 - Make sure you have install `Eslint` and `Prettier` VSCODE extension for better code format
 - Run `yarn start` or `npm start`
 
-## [Live Demo](https://algovisu.netlify.app)
+[Live Demo](https://algovisu.netlify.app)
 
 # About me
 
