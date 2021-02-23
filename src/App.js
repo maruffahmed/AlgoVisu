@@ -1,8 +1,9 @@
 import React from 'react';
 import { BubbleSortSteps } from 'algorithms';
-import ItemBars from 'components/ItemBars';
+import ItemBars from 'components/Bars/ItemBars';
 import { initialState, randomNum } from 'algorithms/lib';
 import { BubbleSortAnimation } from 'algorithmAnimation';
+import Navbar from 'components/Navbar/Navbar';
 
 function App() {
   const [initialArray, setInitialArray] = React.useState(initialState); // Unsorted initial array
@@ -32,7 +33,8 @@ function App() {
     setInitialArray(newArr);
   };
   return (
-    <div className="h-screen w-screen px-4">
+    <div className="h-screen w-screen">
+      <Navbar />
       <ItemBars arr={initialArray} />
       <button className="btn" type="button" onClick={doBubbleSort}>
         BubbleSort

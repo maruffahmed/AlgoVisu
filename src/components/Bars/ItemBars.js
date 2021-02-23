@@ -1,5 +1,5 @@
 import React from 'react';
-import Bar from 'components/Bar';
+import Bar from 'components/Bars/Bar';
 function ItemBars({ arr }) {
   return (
     <div className="bars h-4/5 px-8 py-4">
