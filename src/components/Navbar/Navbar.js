@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
   return (
@@ -9,29 +10,29 @@ function Navbar(props) {
             <h1 className="text-2xl text-gray-600 font-semibold">AlgoVisu</h1>
           </div>
 
-          <ul className="flex gap-4">
+          <ul className="nav-links flex gap-4">
             <li>
               <p className="text-gray-900">Sort :</p>
             </li>
             <li>
-              <a href="/" className="text-gray-700 hover:text-gray-500">
+              <NavLink to="/bubble" className="text-gray-700 hover:text-gray-500">
                 Bubble
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/" className="text-gray-700 hover:text-gray-500">
+              <NavLink to="/insertion" className="text-gray-700 hover:text-gray-500">
                 Insertion
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/" className="text-gray-700 hover:text-gray-500">
+              <NavLink to="/quick" className="text-gray-700 hover:text-gray-500">
                 Quick
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/" className="text-gray-700 hover:text-gray-500">
+              <NavLink to="/merge" className="text-gray-700 hover:text-gray-500">
                 Merge
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
