@@ -1,25 +1,31 @@
-export const BubbleSortAnimation = (sortedArr) => {
+export const BubbleSortAnimation = (sortedArr, speed = 10) => {
   let domBar = document.getElementsByClassName('item-bar');
   for (let i = 0; i < sortedArr.length; i++) {
     let isColor = i % 3 !== 0;
     if (!isColor) {
       let [firstBar, secondBar] = sortedArr[i];
-      let firstBarStyle = domBar[firstBar].style;
-      let secondBarStyle = domBar[secondBar].style;
+      let firstBarStyle = domBar[firstBar];
+      let secondBarStyle = domBar[secondBar];
       // let color = i % 3 !== 0 ? 'red' : 'rgba(16, 185, 129, var(--tw-bg-opacity))';
       let color = 'red';
       setTimeout(() => {
-        firstBarStyle.backgroundColor = color;
-        secondBarStyle.backgroundColor = color;
-      }, i * 50);
+        firstBarStyle.style.backgroundColor = color;
+        secondBarStyle.style.backgroundColor = color;
+        // firstBarStyle.classList.remove('bg-green-500');
+        // secondBarStyle.classList.add('bg-green-500');
+        // firstBarStyle.classList.add(color);
+        // secondBarStyle.classList.add(color);
+      }, i * speed);
     } else {
       setTimeout(() => {
         let [selectedBar, selectedBarHeight] = sortedArr[i];
-        let selectedBarStyle = domBar[selectedBar].style;
-        selectedBarStyle.height = `${selectedBarHeight / 100}%`;
+        let selectedBarStyle = domBar[selectedBar];
+        selectedBarStyle.style.height = `${selectedBarHeight / 100}%`;
         let color = i % 3 !== 1 ? 'red' : 'rgba(16, 185, 129, var(--tw-bg-opacity))';
-        selectedBarStyle.backgroundColor = color;
-      }, i * 50);
+        selectedBarStyle.style.backgroundColor = color;
+        // selectedBarStyle.classList.add(color);
+        // selectedBarStyle.classList.add(color);
+      }, i * speed);
     }
   }
 };
