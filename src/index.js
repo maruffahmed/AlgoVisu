@@ -2,16 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { SortingContextProvider } from 'Context/SortingContext';
+import Wrapper from 'components/Wrapper';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SortingContextProvider>
-      <Router>
-        <App />
-      </Router>
-    </SortingContextProvider>
+    <Wrapper>
+      <App />
+    </Wrapper>
   </React.StrictMode>,
   document.getElementById('root')
 );
