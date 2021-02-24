@@ -5,21 +5,30 @@ import Button from 'components/Button';
 import { useBubbleContext } from 'Context/BubbleSortContext';
 
 function BubbleSort(props) {
-  const { initialArray, doBubbleSort, randomArr } = useSortingContext();
+  const { doBubbleSort, animationSpeed, handleAnimationSpeed } = useSortingContext();
   const { bubbleArray } = useBubbleContext();
+
   return (
     <div className="h-screen px-4">
       <ItemBars arr={bubbleArray} />
-      <div className="flex justify-center gap-4">
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex gap-4 items-center">
+          <p className="text-base">Speed : </p>
+          <select value={animationSpeed} onChange={handleAnimationSpeed}>
+            <option value="10">Fast</option>
+            <option value="100">Medium</option>
+            <option value="200">Slow</option>
+          </select>
+        </div>
+
         <Button
           variant="light"
           className="border border-green-500"
           type="button"
           onClick={() => doBubbleSort(bubbleArray)}
         >
-          BubbleSort
+          Start
         </Button>
-        <Button onClick={randomArr}>Random array</Button>
       </div>
     </div>
   );
