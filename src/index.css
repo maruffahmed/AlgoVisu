@@ -3,13 +3,24 @@
 @tailwind utilities;
 
 @layer components {
-  .btn {
-    @apply py-4 px-4 bg-gray-200 rounded text-gray-900 text-center;
-  }
   .item-bar {
     @apply transition duration-100 ease-in;
   }
   .nav-links li a.active {
     @apply border-b border-green-500 text-green-500;
+  }
+
+  .btn {
+    @apply h-10 flex justify-center items-center px-6 cursor-pointer transition-all font-semibold rounded outline-none focus:outline-none;
+  }
+  .btn-primary {
+    @apply text-white bg-green-600 hover:bg-green-500;
+  }
+  .btn:disabled {
+    @apply opacity-70 cursor-default;
+  }
+  .btn-light {
+    color: inherit;
+    @apply bg-transparent;
   }
 }
