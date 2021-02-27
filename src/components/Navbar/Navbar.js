@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar(props) {
   return (
@@ -7,7 +7,9 @@ function Navbar(props) {
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="brand-logo">
-            <h1 className="text-2xl text-gray-600 font-semibold">AlgoVisu</h1>
+            <Link to="/" className="text-2xl text-gray-600 font-semibold">
+              AlgoVisu
+            </Link>
           </div>
 
           <ul className="nav-links flex gap-4">
