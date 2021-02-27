@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from 'components/Navbar/Navbar';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import BubbleSort from 'components/Bubble/BubbleSort';
+import Bubble from 'components/Bubble/Bubble';
 import Insertion from 'components/Insertion/Insertion';
 import Merge from 'components/Merge/Merge';
 import Quick from 'components/Quick/Quick';
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/">
           <Redirect to="/bubble" />
         </Route>
-        <Route path="/bubble" component={BubbleSort} />
+        <Route path="/bubble" component={Bubble} />
         <Route path="/insertion" component={Insertion} />
         <Route path="/quick" component={Quick} />
         <Route path="/merge" component={Merge} />

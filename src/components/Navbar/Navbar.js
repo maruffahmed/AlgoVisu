@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Navbar(props) {
   return (
-    <nav className="max-h-24 bg-gray-100 py-4">
+    <nav className="max-h-24 bg-gray-100 py-4 fixed top-0 w-full">
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="brand-logo">
