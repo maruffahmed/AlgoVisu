@@ -4,8 +4,8 @@ const BubbleSortContext = React.createContext();
 BubbleSortContext.displayName = 'BubbleSortContext';
 
 function BubbleSortContextProvider(props) {
-  const [bubbleArray] = React.useState(bubbleInitialValue);
-  const value = { bubbleArray };
+  const [bubbleArray, setBubbleArray] = React.useState(bubbleInitialValue);
+  const value = { bubbleArray, setBubbleArray };
   return <BubbleSortContext.Provider value={value} {...props} />;
 }
 

@@ -3,6 +3,8 @@ import Navbar from 'components/Navbar/Navbar';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import BubbleSort from 'components/Bubble/BubbleSort';
 import Insertion from 'components/Insertion/Insertion';
+import Merge from 'components/Merge/Merge';
+import Quick from 'components/Quick/Quick';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         </Route>
         <Route path="/bubble" component={BubbleSort} />
         <Route path="/insertion" component={Insertion} />
+        <Route path="/quick" component={Quick} />
+        <Route path="/merge" component={Merge} />
       </Switch>
     </div>
   );
