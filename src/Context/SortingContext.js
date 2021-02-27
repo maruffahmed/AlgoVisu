@@ -7,6 +7,7 @@ const SortingContext = React.createContext();
 SortingContext.displayName = 'SortingContext';
 
 function SortingContextProvider(props) {
+  const [startAnimation, setStartAnimation] = React.useState(false);
   const [animationSpeed, setAnimationSpeed] = React.useState(100);
   const handleAnimationSpeed = (e) => setAnimationSpeed(e.target.value);
   // Make a random array
@@ -19,6 +20,7 @@ function SortingContextProvider(props) {
   };
   // Buttble sort action
   const doBubbleSort = (theArr = []) => {
+    setStartAnimation(true);
     // BubbleSort();
     let bubbleSortSteps = []; // Bubble sort steps array
     for (let step of BubbleSortSteps(theArr)) {
@@ -35,7 +37,16 @@ function SortingContextProvider(props) {
     newArr.sort((a, b) => a - b);
     setNewArr(newArr);
   };
-  const value = { randomArr, doBubbleSort, doSort, animationSpeed, setAnimationSpeed, handleAnimationSpeed };
+  const value = {
+    randomArr,
+    doBubbleSort,
+    doSort,
+    animationSpeed,
+    setAnimationSpeed,
+    handleAnimationSpeed,
+    startAnimation,
+    setStartAnimation,
+  };
   return <SortingContext.Provider value={value} {...props} />;
 }
 
