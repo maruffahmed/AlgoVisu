@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  .item-bar {
+  /* .item-bar {
     @apply transition duration-100 ease-in;
-  }
+  } */
   .nav-links li a.active {
     @apply border-b border-green-500 text-green-500;
   }

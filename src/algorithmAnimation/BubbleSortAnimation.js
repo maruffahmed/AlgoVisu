@@ -21,7 +21,8 @@ export const BubbleSortAnimation = (sortedArr, speed = 10) => {
         let [selectedBar, selectedBarHeight] = sortedArr[i];
         let selectedBarStyle = domBar[selectedBar];
         selectedBarStyle.style.height = `${selectedBarHeight / 100}%`;
-        let color = i % 3 !== 1 ? 'red' : 'rgba(16, 185, 129, var(--tw-bg-opacity))';
+        // let color = i % 3 === 1 ? 'red' : 'rgba(16, 185, 129, var(--tw-bg-opacity))';
+        let color = 'rgba(16, 185, 129, var(--tw-bg-opacity))';
         selectedBarStyle.style.backgroundColor = color;
         // selectedBarStyle.classList.add(color);
         // selectedBarStyle.classList.add(color);

@@ -17,7 +17,7 @@ function Bubble(props) {
           <select value={animationSpeed} onChange={handleAnimationSpeed}>
             <option value="10">Fast</option>
             <option value="100">Medium</option>
-            <option value="200">Slow</option>
+            <option value="500">Slow</option>
           </select>
         </div>
 
