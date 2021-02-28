@@ -6,10 +6,16 @@ import { useBubbleContext } from 'Context/BubbleSortContext';
 
 function Bubble(props) {
   const { doBubbleSort, animationSpeed, handleAnimationSpeed, startAnimation } = useSortingContext();
-  const { bubbleArray, bubbleBars, setBubbleBars } = useBubbleContext();
+  const { bubbleArray, bubbleBars, setBubbleBars, genRandomBubbleArray } = useBubbleContext();
   const handleBubbleBarAmount = (e) => {
     setBubbleBars(e.target.value);
   };
+
+  React.useEffect(() => {
+    genRandomBubbleArray(bubbleBars);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [bubbleBars]);
+
   return (
     <div className="h-screen px-4 pt-16">
       <ItemBars arr={bubbleArray} />
@@ -24,8 +30,8 @@ function Bubble(props) {
             </select>
           </div>
           <div className="flex gap-4 items-center">
-            <p>Bars : </p>
-            <select value={bubbleBars} onChange={handleBubbleBarAmount}>
+            <p>Total Bars : </p>
+            <select value={bubbleBars} onChange={handleBubbleBarAmount} disabled={startAnimation}>
               <option value="10">10</option>
               <option value="15">15</option>
               <option value="25">25</option>
