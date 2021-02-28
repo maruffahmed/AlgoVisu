@@ -9,7 +9,7 @@ Follow this to run this project on your local environment:
 
 - Clone this repo
 - Run `yarn` or `npm install`
-- Make sure you have install `Eslint` and `Prettier` VSCODE extension for better code format
+- Make sure you have install `Eslint` and `Prettier` VSCODE extension for better code format (Optional)
 - Run `yarn start` or `npm start`
 
 [Live Demo](https://algo-visu.vercel.app/)
