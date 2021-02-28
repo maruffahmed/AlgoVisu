@@ -10,9 +10,9 @@ function SortingContextProvider(props) {
   const [totalCountedSteps, setTotalCountedSteps] = React.useState(0);
   const handleAnimationSpeed = (e) => setAnimationSpeed(e.target.value);
   // Make a random array
-  const randomArr = (setNewArr) => {
+  const randomArr = (setNewArr, length) => {
     let newArr = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < length; i++) {
       newArr.push(randomNum(500, 10000));
     }
     setNewArr(newArr);
