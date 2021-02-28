@@ -1,10 +1,10 @@
 import React from 'react';
-import { bubbleInitialValue, randomNum } from 'algorithms/lib';
+import { randomNum } from 'algorithms/lib';
 const BubbleSortContext = React.createContext();
 BubbleSortContext.displayName = 'BubbleSortContext';
 
 function BubbleSortContextProvider(props) {
-  const [bubbleArray, setBubbleArray] = React.useState(bubbleInitialValue);
+  const [bubbleArray, setBubbleArray] = React.useState(null);
   const [bubbleBars, setBubbleBars] = React.useState(15);
   const genRandomBubbleArray = (bars = 10) => {
     let newBubbleArray = [];
