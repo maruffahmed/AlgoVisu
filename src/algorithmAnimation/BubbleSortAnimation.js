@@ -1,4 +1,4 @@
-export const BubbleSortAnimation = (sortedArr, speed = 10) => {
+export const BubbleSortAnimation = (sortedArr, speed = 10, setTotalCountedSteps) => {
   let domBar = document.getElementsByClassName('item-bar');
   for (let i = 0; i < sortedArr.length; i++) {
     let isColor = i % 3 !== 0;
@@ -15,6 +15,7 @@ export const BubbleSortAnimation = (sortedArr, speed = 10) => {
         // secondBarStyle.classList.add('bg-green-500');
         // firstBarStyle.classList.add(color);
         // secondBarStyle.classList.add(color);
+        setTotalCountedSteps((prevCount) => prevCount + 1);
       }, i * speed);
     } else {
       setTimeout(() => {
@@ -26,6 +27,7 @@ export const BubbleSortAnimation = (sortedArr, speed = 10) => {
         selectedBarStyle.style.backgroundColor = color;
         // selectedBarStyle.classList.add(color);
         // selectedBarStyle.classList.add(color);
+        setTotalCountedSteps((prevCount) => prevCount + 1);
       }, i * speed);
     }
   }

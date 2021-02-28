@@ -5,11 +5,30 @@ import Button from 'components/Button';
 import { useBubbleContext } from 'Context/BubbleSortContext';
 
 function Bubble(props) {
-  const { animationSpeed, handleAnimationSpeed, startAnimation } = useSortingContext();
+  const [bubbleSortStepsCount, setBubbleSortStepsCount] = React.useState(0);
+  const {
+    animationSpeed,
+    handleAnimationSpeed,
+    startAnimation,
+    setStartAnimation,
+    totalCountedSteps,
+    setTotalCountedSteps,
+  } = useSortingContext();
   const { doBubbleSort, bubbleArray, bubbleBars, setBubbleBars, genRandomBubbleArray } = useBubbleContext();
   const handleBubbleBarAmount = (e) => {
     setBubbleBars(e.target.value);
   };
+  const handleBubbleSort = () => {
+    const countSteps = doBubbleSort(bubbleArray);
+    setBubbleSortStepsCount(countSteps);
+  };
+
+  React.useEffect(() => {
+    if (bubbleSortStepsCount === totalCountedSteps) {
+      setStartAnimation(false);
+      setTotalCountedSteps(0);
+    }
+  }, [bubbleSortStepsCount, setStartAnimation, setTotalCountedSteps, totalCountedSteps]);
 
   React.useEffect(() => {
     genRandomBubbleArray(bubbleBars);
@@ -44,7 +63,7 @@ function Bubble(props) {
           variant="light"
           className="border border-green-500"
           type="button"
-          onClick={() => doBubbleSort(bubbleArray)}
+          onClick={handleBubbleSort}
           disabled={startAnimation}
         >
           Start
