@@ -64,7 +64,28 @@ export const initialValue = [
   2701,
 ];
 
-export const bubbleInitialValue = [4609, 527, 6728, 3337, 9747, 3486, 6000, 834, 4108, 5369, 3941, 5009, 2902, 2400];
+export const bubbleInitialValue = [
+  4609,
+  527,
+  6728,
+  3337,
+  9747,
+  3486,
+  6000,
+  834,
+  4108,
+  5369,
+  3941,
+  5009,
+  2902,
+  2400,
+  1000,
+  1590,
+  2650,
+  4780,
+  9800,
+  7390,
+];
 
 // Get a random number between minimum and maximum number
 export function randomNum(min, max) {
