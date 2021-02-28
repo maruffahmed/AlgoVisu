@@ -80,11 +80,11 @@ export const bubbleInitialValue = [
   2902,
   2400,
   1000,
-  1590,
-  2650,
-  4780,
-  9800,
-  7390,
+  // 1590,
+  // 2650,
+  // 4780,
+  // 9800,
+  // 7390,
 ];
 
 // Get a random number between minimum and maximum number
