@@ -5,8 +5,8 @@ import Button from 'components/Button';
 import { useBubbleContext } from 'Context/BubbleSortContext';
 
 function Bubble(props) {
-  const { doBubbleSort, animationSpeed, handleAnimationSpeed, startAnimation } = useSortingContext();
-  const { bubbleArray, bubbleBars, setBubbleBars, genRandomBubbleArray } = useBubbleContext();
+  const { animationSpeed, handleAnimationSpeed, startAnimation } = useSortingContext();
+  const { doBubbleSort, bubbleArray, bubbleBars, setBubbleBars, genRandomBubbleArray } = useBubbleContext();
   const handleBubbleBarAmount = (e) => {
     setBubbleBars(e.target.value);
   };
@@ -17,10 +17,10 @@ function Bubble(props) {
   }, [bubbleBars]);
 
   return (
-    <div className="h-screen px-4 pt-16">
+    <div className="h-screen px-4 pt-24 md:pt-20">
       <ItemBars arr={bubbleArray} />
       <div className="flex flex-col items-center gap-4">
-        <div className="flex gap-8">
+        <div className="flex flex-col gap-4 md:flex-row md:gap-8">
           <div className="flex gap-4 items-center">
             <p className="text-base">Speed : </p>
             <select value={animationSpeed} onChange={handleAnimationSpeed} disabled={startAnimation}>

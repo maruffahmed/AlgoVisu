@@ -1,7 +1,5 @@
 import React from 'react';
-import { BubbleSortSteps } from 'algorithms';
 import { randomNum } from 'algorithms/lib';
-import { BubbleSortAnimation } from 'algorithmAnimation';
 
 const SortingContext = React.createContext();
 SortingContext.displayName = 'SortingContext';
@@ -18,18 +16,6 @@ function SortingContextProvider(props) {
     }
     setNewArr(newArr);
   };
-  // Buttble sort action
-  const doBubbleSort = (theArr = []) => {
-    setStartAnimation(true);
-    // BubbleSort();
-    let bubbleSortSteps = []; // Bubble sort steps array
-    for (let step of BubbleSortSteps(theArr)) {
-      bubbleSortSteps.push(step);
-    }
-    console.log(bubbleSortSteps);
-    // console.log(bubbleSortSteps);
-    BubbleSortAnimation(bubbleSortSteps, animationSpeed);
-  };
 
   // Js buildin sort()
   const doSort = (theArr = [], setNewArr) => {
@@ -39,7 +25,6 @@ function SortingContextProvider(props) {
   };
   const value = {
     randomArr,
-    doBubbleSort,
     doSort,
     animationSpeed,
     setAnimationSpeed,
