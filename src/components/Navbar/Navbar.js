@@ -11,7 +11,7 @@ function Navbar(props) {
   return (
     <nav className="max-h-24 bg-gray-100 py-4 fixed top-0 w-full">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-4 md:flex-row items-center justify-between">
           <div className="brand-logo">
             <Link to="/" className="text-2xl text-gray-600 font-semibold" onClick={handleLinkClick}>
               AlgoVisu
