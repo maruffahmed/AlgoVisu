@@ -15,14 +15,7 @@ function Bubble(props) {
     setTotalCountedSteps,
     randomArr,
   } = useSortingContext();
-  const {
-    doBubbleSort,
-    bubbleArray,
-    setBubbleArray,
-    bubbleBars,
-    setBubbleBars,
-    genRandomBubbleArray,
-  } = useBubbleContext();
+  const { doBubbleSort, bubbleArray, setBubbleArray, bubbleBars, setBubbleBars } = useBubbleContext();
   const handleBubbleBarAmount = (e) => {
     setBubbleBars(e.target.value);
   };
@@ -40,7 +33,7 @@ function Bubble(props) {
   }, [bubbleSortStepsCount, setStartAnimation, setTotalCountedSteps, totalCountedSteps]);
 
   React.useEffect(() => {
-    genRandomBubbleArray(bubbleBars);
+    randomArr(setBubbleArray, bubbleBars);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bubbleBars]);
 

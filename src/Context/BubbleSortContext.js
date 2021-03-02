@@ -12,14 +12,6 @@ function BubbleSortContextProvider(props) {
   const [bubbleBars, setBubbleBars] = React.useState(15);
   const { animationSpeed, setStartAnimation, setTotalCountedSteps } = useSortingContext();
 
-  const genRandomBubbleArray = (bars = 10) => {
-    let newBubbleArray = [];
-    for (let i = 0; i < bars; i++) {
-      newBubbleArray.push(randomNum(500, 10000));
-    }
-    setBubbleArray(newBubbleArray);
-  };
-
   // Buttble sort action
   const doBubbleSort = (theArr = []) => {
     setStartAnimation(true);
@@ -34,7 +26,7 @@ function BubbleSortContextProvider(props) {
     return bubbleSortSteps.length;
   };
 
-  const value = { bubbleArray, setBubbleArray, genRandomBubbleArray, bubbleBars, setBubbleBars, doBubbleSort };
+  const value = { bubbleArray, setBubbleArray, bubbleBars, setBubbleBars, doBubbleSort };
   return <BubbleSortContext.Provider value={value} {...props} />;
 }
 
