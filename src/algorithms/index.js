@@ -1,3 +1,4 @@
 import { BubbleSortSteps } from './BubbleSort';
+import { InsertionSortSteps } from './InsertionSort';
 
-export { BubbleSortSteps };
+export { BubbleSortSteps, InsertionSortSteps };
