@@ -2,9 +2,10 @@ import React from 'react';
 import ItemBars from 'components/Bars/ItemBars';
 import Button from 'components/Button';
 import { useSortingContext } from 'Context/SortingContext';
+import { useInsertionContext } from 'Context/InsertionSortContext';
 
 function Insertion(props) {
-  const insertionArray = [5252, 9274, 2983, 9238, 3267, 4359, 7612, 4387, 2723, 3498, 6328, 7999, 1982, 3974, 6922];
+  const [insertionSortStepsCount, setInsertionSortStepsCount] = React.useState(0);
   const {
     animationSpeed,
     handleAnimationSpeed,
@@ -17,17 +18,30 @@ function Insertion(props) {
     setTotalCountedSteps,
     randomArr,
   } = useSortingContext();
-
-  let insertionBars = 15;
-  const setInsertionBars = (arr) => (insertionBars = arr);
+  const { doInsertionSort, insertionArray, setInsertionArray, insertionBars, setInsertionBars } = useInsertionContext();
 
   const handleInsertionSort = () => {
     console.log('Insertion sort begin()');
+    const countSteps = doInsertionSort(insertionArray);
+    setInsertionSortStepsCount(countSteps);
   };
-  const handleInsertionBarAmount = () => {
-    console.log('Handle insertion bar amount');
+  const handleInsertionBarAmount = (e) => {
+    setInsertionBars(e.target.value);
   };
-  const handleShuffleArray = () => randomArr(setInsertionBars, insertionBars);
+  const handleShuffleArray = () => randomArr(setInsertionArray, insertionBars);
+
+  // React.useEffect(() => {
+  //   if (bubbleSortStepsCount === totalCountedSteps) {
+  //     setStartAnimation(false);
+  //     setTotalCountedSteps(0);
+  //   }
+  // }, [bubbleSortStepsCount, setStartAnimation, setTotalCountedSteps, totalCountedSteps]);
+
+  React.useEffect(() => {
+    randomArr(setInsertionArray, insertionBars);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [insertionBars]);
+
   return (
     <div className="h-screen px-4 pt-24 md:pt-20">
       <ItemBars arr={insertionArray} />

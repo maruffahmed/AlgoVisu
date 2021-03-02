@@ -13,13 +13,13 @@ function InsertionSortContextProvider(props) {
 
   // Buttble sort action
   const doInsertionSort = (theArr = []) => {
-    setStartAnimation(true);
+    // setStartAnimation(true);
     // InsertionSort();
     let insertionSortSteps = []; // Insertion sort steps array
     for (let step of InsertionSortSteps(theArr)) {
-      InsertionSortSteps.push(step);
+      insertionSortSteps.push(step);
     }
-    console.log(InsertionSortSteps);
+    console.log(insertionSortSteps);
     // console.log(InsertionSortSteps);
     // BubbleSortAnimation(bubbleSortSteps, animationSpeed, setTotalCountedSteps);
     return insertionSortSteps.length;
