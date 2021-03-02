@@ -1,5 +1,4 @@
 import React from 'react';
-import { randomNum } from 'algorithms/lib';
 import { BubbleSortAnimation } from 'algorithmAnimation';
 import { BubbleSortSteps } from 'algorithms';
 import { useSortingContext } from './SortingContext';
