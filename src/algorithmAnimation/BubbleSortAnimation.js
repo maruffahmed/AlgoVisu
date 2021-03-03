@@ -1,4 +1,4 @@
-export const BubbleSortAnimation = (sortedArr, speed = 10, setTotalCountedSteps) => {
+export const BubbleSortAnimation = (sortedArr = [], speed = 10, setTotalCountedSteps) => {
   let domBar = document.getElementsByClassName('item-bar');
   for (let i = 0; i < sortedArr.length; i++) {
     let isColor = i % 3 !== 0;

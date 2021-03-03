@@ -30,12 +30,12 @@ function Insertion(props) {
   };
   const handleShuffleArray = () => randomArr(setInsertionArray, insertionBars);
 
-  // React.useEffect(() => {
-  //   if (bubbleSortStepsCount === totalCountedSteps) {
-  //     setStartAnimation(false);
-  //     setTotalCountedSteps(0);
-  //   }
-  // }, [bubbleSortStepsCount, setStartAnimation, setTotalCountedSteps, totalCountedSteps]);
+  React.useEffect(() => {
+    if (insertionSortStepsCount === totalCountedSteps) {
+      setStartAnimation(false);
+      setTotalCountedSteps(0);
+    }
+  }, [insertionSortStepsCount, setStartAnimation, setTotalCountedSteps, totalCountedSteps]);
 
   React.useEffect(() => {
     randomArr(setInsertionArray, insertionBars);

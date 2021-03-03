@@ -1,5 +1,5 @@
 import React from 'react';
-// import { BubbleSortAnimation } from 'algorithmAnimation';
+import { InsertionSortAnimation } from 'algorithmAnimation';
 import { InsertionSortSteps } from 'algorithms';
 import { useSortingContext } from './SortingContext';
 
@@ -13,7 +13,7 @@ function InsertionSortContextProvider(props) {
 
   // Buttble sort action
   const doInsertionSort = (theArr = []) => {
-    // setStartAnimation(true);
+    setStartAnimation(true);
     // InsertionSort();
     let insertionSortSteps = []; // Insertion sort steps array
     for (let step of InsertionSortSteps(theArr)) {
@@ -21,7 +21,7 @@ function InsertionSortContextProvider(props) {
     }
     console.log(insertionSortSteps);
     // console.log(InsertionSortSteps);
-    // BubbleSortAnimation(bubbleSortSteps, animationSpeed, setTotalCountedSteps);
+    InsertionSortAnimation(insertionSortSteps, animationSpeed, setTotalCountedSteps);
     return insertionSortSteps.length;
   };
 
