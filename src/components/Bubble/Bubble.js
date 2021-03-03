@@ -7,6 +7,8 @@ import { useBubbleContext } from 'Context/BubbleSortContext';
 function Bubble(props) {
   const [bubbleSortStepsCount, setBubbleSortStepsCount] = React.useState(0);
   const {
+    isSorted,
+    setIsSorted,
     animationSpeed,
     handleAnimationSpeed,
     startAnimation,
@@ -20,10 +22,14 @@ function Bubble(props) {
     setBubbleBars(e.target.value);
   };
   const handleBubbleSort = () => {
+    setIsSorted(true);
     const countSteps = doBubbleSort(bubbleArray);
     setBubbleSortStepsCount(countSteps);
   };
-  const handleShuffleArray = () => randomArr(setBubbleArray, bubbleBars);
+  const handleShuffleArray = () => {
+    randomArr(setBubbleArray, bubbleBars);
+    setIsSorted(false);
+  };
 
   React.useEffect(() => {
     if (bubbleSortStepsCount === totalCountedSteps) {
@@ -34,6 +40,7 @@ function Bubble(props) {
 
   React.useEffect(() => {
     randomArr(setBubbleArray, bubbleBars);
+    setIsSorted(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bubbleBars]);
 
@@ -68,7 +75,7 @@ function Bubble(props) {
             className="border border-green-500"
             type="button"
             onClick={handleBubbleSort}
-            disabled={startAnimation}
+            disabled={startAnimation || isSorted}
           >
             Start
           </Button>

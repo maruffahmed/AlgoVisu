@@ -7,6 +7,8 @@ import { useInsertionContext } from 'Context/InsertionSortContext';
 function Insertion(props) {
   const [insertionSortStepsCount, setInsertionSortStepsCount] = React.useState(0);
   const {
+    isSorted,
+    setIsSorted,
     animationSpeed,
     handleAnimationSpeed,
     startAnimation,
@@ -21,14 +23,17 @@ function Insertion(props) {
   const { doInsertionSort, insertionArray, setInsertionArray, insertionBars, setInsertionBars } = useInsertionContext();
 
   const handleInsertionSort = () => {
-    console.log('Insertion sort begin()');
+    setIsSorted(true);
     const countSteps = doInsertionSort(insertionArray);
     setInsertionSortStepsCount(countSteps);
   };
   const handleInsertionBarAmount = (e) => {
     setInsertionBars(e.target.value);
   };
-  const handleShuffleArray = () => randomArr(setInsertionArray, insertionBars);
+  const handleShuffleArray = () => {
+    randomArr(setInsertionArray, insertionBars);
+    setIsSorted(false);
+  };
 
   React.useEffect(() => {
     if (insertionSortStepsCount === totalCountedSteps) {
@@ -39,6 +44,7 @@ function Insertion(props) {
 
   React.useEffect(() => {
     randomArr(setInsertionArray, insertionBars);
+    setIsSorted(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [insertionBars]);
 
@@ -73,7 +79,7 @@ function Insertion(props) {
             className="border border-green-500"
             type="button"
             onClick={handleInsertionSort}
-            disabled={startAnimation}
+            disabled={startAnimation || isSorted}
           >
             Start
           </Button>

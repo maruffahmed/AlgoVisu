@@ -5,6 +5,7 @@ const SortingContext = React.createContext();
 SortingContext.displayName = 'SortingContext';
 
 function SortingContextProvider(props) {
+  const [isSorted, setIsSorted] = React.useState(false);
   const [startAnimation, setStartAnimation] = React.useState(false);
   const [animationSpeed, setAnimationSpeed] = React.useState(100);
   const [totalCountedSteps, setTotalCountedSteps] = React.useState(0);
@@ -25,6 +26,8 @@ function SortingContextProvider(props) {
     setNewArr(newArr);
   };
   const value = {
+    isSorted,
+    setIsSorted,
     randomArr,
     doSort,
     animationSpeed,

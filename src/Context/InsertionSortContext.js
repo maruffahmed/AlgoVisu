@@ -19,8 +19,6 @@ function InsertionSortContextProvider(props) {
     for (let step of InsertionSortSteps(theArr)) {
       insertionSortSteps.push(step);
     }
-    console.log(insertionSortSteps);
-    // console.log(InsertionSortSteps);
     InsertionSortAnimation(insertionSortSteps, animationSpeed, setTotalCountedSteps);
     return insertionSortSteps.length;
   };
