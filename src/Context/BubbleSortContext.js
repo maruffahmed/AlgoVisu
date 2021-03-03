@@ -19,8 +19,6 @@ function BubbleSortContextProvider(props) {
     for (let step of BubbleSortSteps(theArr)) {
       bubbleSortSteps.push(step);
     }
-    console.log(bubbleSortSteps);
-    // console.log(bubbleSortSteps);
     BubbleSortAnimation(bubbleSortSteps, animationSpeed, setTotalCountedSteps);
     return bubbleSortSteps.length;
   };

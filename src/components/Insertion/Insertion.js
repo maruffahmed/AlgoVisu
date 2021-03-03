@@ -44,6 +44,7 @@ function Insertion(props) {
 
   return (
     <div className="h-screen px-4 pt-24 md:pt-20">
+      <p className="text-center text-xl">Insertion Sort</p>
       <ItemBars arr={insertionArray} />
       <div className="flex flex-col items-center gap-4">
         <div className="flex flex-col gap-4 md:flex-row md:gap-8">

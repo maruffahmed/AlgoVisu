@@ -39,6 +39,7 @@ function Bubble(props) {
 
   return (
     <div className="h-screen px-4 pt-24 md:pt-20">
+      <p className="text-center text-xl">Bubble Sort</p>
       <ItemBars arr={bubbleArray} />
       <div className="flex flex-col items-center gap-4">
         <div className="flex flex-col gap-4 md:flex-row md:gap-8">
