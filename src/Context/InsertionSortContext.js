@@ -8,7 +8,7 @@ InsertionSortContext.displayName = 'InsertionSortContext';
 
 function InsertionSortContextProvider(props) {
   const [insertionArray, setInsertionArray] = React.useState(null);
-  const [insertionBars, setInsertionBars] = React.useState(15);
+  const [insertionBars, setInsertionBars] = React.useState(25);
   const { animationSpeed, setStartAnimation, setTotalCountedSteps } = useSortingContext();
 
   // Buttble sort action

@@ -8,7 +8,7 @@ BubbleSortContext.displayName = 'BubbleSortContext';
 
 function BubbleSortContextProvider(props) {
   const [bubbleArray, setBubbleArray] = React.useState(null);
-  const [bubbleBars, setBubbleBars] = React.useState(15);
+  const [bubbleBars, setBubbleBars] = React.useState(25);
   const { animationSpeed, setStartAnimation, setTotalCountedSteps } = useSortingContext();
 
   // Buttble sort action
