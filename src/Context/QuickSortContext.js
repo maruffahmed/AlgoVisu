@@ -8,7 +8,7 @@ QuickSortContext.displayName = 'QuickSortContext';
 
 function QuickSortContextProvider(props) {
   const [quickArray, setQuickArray] = React.useState(null);
-  const [quickBars, setQuickBars] = React.useState(25);
+  const [quickBars, setQuickBars] = React.useState(50);
   const { animationSpeed, setStartAnimation, setTotalCountedSteps } = useSortingContext();
 
   // Buttble sort action
