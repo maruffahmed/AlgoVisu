@@ -7,7 +7,7 @@ SortingContext.displayName = 'SortingContext';
 function SortingContextProvider(props) {
   const [isSorted, setIsSorted] = React.useState(false);
   const [startAnimation, setStartAnimation] = React.useState(false);
-  const [animationSpeed, setAnimationSpeed] = React.useState(100);
+  const [animationSpeed, setAnimationSpeed] = React.useState(10);
   const [totalCountedSteps, setTotalCountedSteps] = React.useState(0);
   const handleAnimationSpeed = (e) => setAnimationSpeed(e.target.value);
   // Make a random array
