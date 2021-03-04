@@ -55,7 +55,6 @@ function Quick() {
           <div className="flex gap-4 items-center">
             <p className="text-base">Speed : </p>
             <select value={animationSpeed} onChange={handleAnimationSpeed} disabled={startAnimation}>
-              <option value="5">Super Fast</option>
               <option value="10">Fast</option>
               <option value="100">Medium</option>
               <option value="500">Slow</option>
