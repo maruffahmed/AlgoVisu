@@ -1,6 +1,6 @@
 import React from 'react';
-// import { InsertionSortAnimation } from 'algorithmAnimation';
-// import { InsertionSortSteps } from 'algorithms';
+import { QuickSortAnimation } from 'algorithmAnimation';
+import { QuickSortSteps } from 'algorithms';
 import { useSortingContext } from './SortingContext';
 
 const QuickSortContext = React.createContext();
@@ -14,13 +14,11 @@ function QuickSortContextProvider(props) {
   // Buttble sort action
   const doQuickSort = (theArr = []) => {
     setStartAnimation(true);
-    // InsertionSort();
-    let insertionSortSteps = []; // Insertion sort steps array
-    // for (let step of InsertionSortSteps(theArr)) {
-    //   insertionSortSteps.push(step);
-    // }
-    // InsertionSortAnimation(insertionSortSteps, animationSpeed, setTotalCountedSteps);
-    return insertionSortSteps.length;
+    // QuickSort();
+    let quickSortSteps = QuickSortSteps(quickArray); // Quick sort steps array
+    // console.log(quickSortSteps);
+    QuickSortAnimation(quickSortSteps, animationSpeed, setTotalCountedSteps);
+    return quickSortSteps.length;
   };
 
   const value = {
