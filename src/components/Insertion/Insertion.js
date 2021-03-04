@@ -12,11 +12,8 @@ function Insertion(props) {
     animationSpeed,
     handleAnimationSpeed,
     startAnimation,
-    // eslint-disable-next-line no-unused-vars
     setStartAnimation,
-    // eslint-disable-next-line no-unused-vars
     totalCountedSteps,
-    // eslint-disable-next-line no-unused-vars
     setTotalCountedSteps,
     randomArr,
   } = useSortingContext();
