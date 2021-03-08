@@ -1,3 +1,4 @@
+let countSteps = [];
 function merge(arr1, arr2) {
   let result = [];
   let i = 0;
@@ -34,6 +35,8 @@ function mergeSort(arr) {
   return merge(firstHalf, secondHalf);
 }
 
-function mergeSortSteps() {}
+function MergeSortSteps() {
+  return countSteps;
+}
 
-export { mergeSort, mergeSortSteps };
+export { mergeSort, MergeSortSteps };

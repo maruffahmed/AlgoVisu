@@ -1,6 +1,6 @@
 import { BubbleSortSteps } from './BubbleSort';
 import { InsertionSortSteps } from './InsertionSort';
 import { QuickSortSteps } from './QuickSort';
-import { mergeSortSteps } from './MergeSort';
+import { MergeSortSteps } from './MergeSort';
 
-export { BubbleSortSteps, InsertionSortSteps, QuickSortSteps, mergeSortSteps };
+export { BubbleSortSteps, InsertionSortSteps, QuickSortSteps, MergeSortSteps };
