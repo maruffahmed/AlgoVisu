@@ -4,6 +4,7 @@ import { SortingContextProvider } from 'Context/SortingContext';
 import BubbleSortContextProvider from 'Context/BubbleSortContext';
 import InsertionSortContextProvider from 'Context/InsertionSortContext';
 import QuickSortContextProvider from 'Context/QuickSortContext';
+import MergeSortContextProvider from 'Context/MergeSortContext';
 
 function Wrapper({ children }) {
   return (
@@ -11,7 +12,9 @@ function Wrapper({ children }) {
       <BubbleSortContextProvider>
         <InsertionSortContextProvider>
           <QuickSortContextProvider>
-            <Router>{children}</Router>
+            <MergeSortContextProvider>
+              <Router>{children}</Router>
+            </MergeSortContextProvider>
           </QuickSortContextProvider>
         </InsertionSortContextProvider>
       </BubbleSortContextProvider>
