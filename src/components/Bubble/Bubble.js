@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import ItemBars from 'components/Bars/ItemBars';
 import { useSortingContext } from 'Context/SortingContext';
 import Button from 'components/Button';
@@ -94,6 +94,9 @@ function Bubble(props) {
           </Button>
         </div>
       </div>
+      {/* <div className="container mx-auto">
+        <h1 className="text-2xl">About Bubble Sort</h1>
+      </div> */}
     </div>
   );
 }
