@@ -4,6 +4,7 @@ import ItemBars from 'components/Bars/ItemBars';
 import { useSortingContext } from 'Context/SortingContext';
 import Button from 'components/Button';
 import { useBubbleContext } from 'Context/BubbleSortContext';
+import BubbleInfo from './BubbleInfo';
 
 function Bubble(props) {
   const [bubbleSortStepsCount, setBubbleSortStepsCount] = React.useState(0);
@@ -94,9 +95,7 @@ function Bubble(props) {
           </Button>
         </div>
       </div>
-      {/* <div className="container mx-auto">
-        <h1 className="text-2xl">About Bubble Sort</h1>
-      </div> */}
+      <BubbleInfo />
     </div>
   );
 }

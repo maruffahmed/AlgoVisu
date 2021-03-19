@@ -4,6 +4,7 @@ import ItemBars from 'components/Bars/ItemBars';
 import Button from 'components/Button';
 import { useSortingContext } from 'Context/SortingContext';
 import { useQuickContext } from 'Context/QuickSortContext';
+import QuickInfo from './QuickInfo';
 
 function Quick() {
   const [quickSortStepsCount, setQuickSortStepsCount] = React.useState(0);
@@ -97,6 +98,7 @@ function Quick() {
           </Button>
         </div>
       </div>
+      <QuickInfo />
     </div>
   );
 }

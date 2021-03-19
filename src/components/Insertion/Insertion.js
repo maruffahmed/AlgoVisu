@@ -4,6 +4,7 @@ import ItemBars from 'components/Bars/ItemBars';
 import Button from 'components/Button';
 import { useSortingContext } from 'Context/SortingContext';
 import { useInsertionContext } from 'Context/InsertionSortContext';
+import InsertionInfo from './InsertionInfo';
 
 function Insertion(props) {
   const [insertionSortStepsCount, setInsertionSortStepsCount] = React.useState(0);
@@ -95,6 +96,7 @@ function Insertion(props) {
           </Button>
         </div>
       </div>
+      <InsertionInfo />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import ItemBars from 'components/Bars/ItemBars';
 import Button from 'components/Button';
 import { useSortingContext } from 'Context/SortingContext';
 import { useMergeContext } from 'Context/MergeSortContext';
+import MergeInfo from './MergeInfo';
 
 function Merge(props) {
   const [mergeSortStepsCount, setMergeSortStepsCount] = React.useState(0);
@@ -97,6 +98,7 @@ function Merge(props) {
           </Button>
         </div>
       </div>
+      <MergeInfo />
     </div>
   );
 }

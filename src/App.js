@@ -8,7 +8,7 @@ import Quick from 'components/Quick/Quick';
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen font-body">
       <Navbar />
       <Switch>
         <Route exact path="/">
