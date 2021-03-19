@@ -1,5 +1,5 @@
 import React from 'react';
-// import { QuickSortAnimation } from 'algorithmAnimation';
+import { MergeSortAnimation } from 'algorithmAnimation';
 import { MergeSortSteps } from 'algorithms';
 import { useSortingContext } from './SortingContext';
 
@@ -16,8 +16,7 @@ function MergeSortContextProvider(props) {
     setStartAnimation(true);
     // QuickSort();
     let mergeSortSteps = MergeSortSteps(mergeArray); // Quick sort steps array
-    // console.log(quickSortSteps);
-    // QuickSortAnimation(quickSortSteps, animationSpeed, setTotalCountedSteps);
+    MergeSortAnimation(mergeSortSteps, animationSpeed, setTotalCountedSteps);
     return mergeSortSteps.length;
   };
 

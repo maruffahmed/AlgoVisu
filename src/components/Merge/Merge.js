@@ -21,7 +21,7 @@ function Merge(props) {
   const { doMergeSort, mergeArray, setMergeArray, mergeBars, setMergeBars } = useMergeContext();
 
   const handleMergeSort = () => {
-    // setIsSorted(true);
+    setIsSorted(true);
     const countSteps = doMergeSort(mergeArray);
     setMergeSortStepsCount(countSteps);
   };
