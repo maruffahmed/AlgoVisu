@@ -13,15 +13,13 @@ function Navbar(props) {
       <div className="container mx-auto">
         <div className="flex flex-col gap-4 md:flex-row items-center justify-between">
           <div className="brand-logo">
-            <Link to="/" className="text-2xl text-gray-600 font-semibold" onClick={handleLinkClick}>
+            <Link to="/" className="text-2xl text-gray-600 font-semibold active" onClick={handleLinkClick}>
               AlgoVisu
             </Link>
           </div>
 
           <ul className="nav-links flex gap-4">
-            <li>
-              <p className="text-gray-900">Sort :</p>
-            </li>
+            <li>{/* <p className="text-gray-900">Sort :</p> */}</li>
             <li>
               <NavLink to="/bubble" className="text-gray-700 hover:text-gray-500" onClick={handleLinkClick}>
                 Bubble
