@@ -23,12 +23,12 @@ function InsertionInfo(props) {
           <ul>
             <li className="mb-2">
               <p className="text-gray-700">
-                <span className="font-semibold">Worst complexity:</span> n^2
+                <span className="font-semibold">Worst complexity:</span> n<sup>2</sup>
               </p>
             </li>
             <li className="mb-2">
               <p className="text-gray-700">
-                <span className="font-semibold">Average complexity:</span> n^2
+                <span className="font-semibold">Average complexity:</span> n<sup>2</sup>
               </p>
             </li>
             <li className="mb-2">
