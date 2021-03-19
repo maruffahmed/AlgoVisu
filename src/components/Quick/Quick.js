@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import ItemBars from 'components/Bars/ItemBars';
 import Button from 'components/Button';
 import { useSortingContext } from 'Context/SortingContext';
@@ -48,6 +49,9 @@ function Quick() {
 
   return (
     <div className="h-screen px-4 pt-24 md:pt-20">
+      <Helmet>
+        <title>Quick Sort</title>
+      </Helmet>
       <p className="text-center text-xl">Quick Sort</p>
       <ItemBars arr={quickArray} />
       <div className="flex flex-col items-center gap-4">

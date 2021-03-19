@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import ItemBars from 'components/Bars/ItemBars';
 import { useSortingContext } from 'Context/SortingContext';
 import Button from 'components/Button';
@@ -46,6 +47,9 @@ function Bubble(props) {
 
   return (
     <div className="h-screen px-4 pt-24 md:pt-20">
+      <Helmet>
+        <title>Bubble Sort</title>
+      </Helmet>
       <p className="text-center text-xl">Bubble Sort</p>
       <ItemBars arr={bubbleArray} />
       <div className="flex flex-col items-center gap-4">

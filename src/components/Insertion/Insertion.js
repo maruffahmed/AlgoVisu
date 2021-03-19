@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import ItemBars from 'components/Bars/ItemBars';
 import Button from 'components/Button';
 import { useSortingContext } from 'Context/SortingContext';
@@ -47,6 +48,9 @@ function Insertion(props) {
 
   return (
     <div className="h-screen px-4 pt-24 md:pt-20">
+      <Helmet>
+        <title>Insertion Sort</title>
+      </Helmet>
       <p className="text-center text-xl">Insertion Sort</p>
       <ItemBars arr={insertionArray} />
       <div className="flex flex-col items-center gap-4">
