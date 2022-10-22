@@ -1,6 +1,6 @@
 # About AlgoVisu
 
-This is a fun project to visualize various type of algorithm. I learn this algorithm and try to implement by using ReactJs (A javaScript library).
+This is a fun project to visualize the most common types of soring algorithm (Bubble, Insertion, Quick and Merge). At the time of learning this algorithm I have try to implement them using ReactJs (A javaScript library).
 
 ## Installation
 
